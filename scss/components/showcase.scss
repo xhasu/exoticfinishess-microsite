@@ -41,17 +41,31 @@
         content: "";
         display: inline-block;
         width: 50px;
+        width: .20835em;
         height: 1px;
       }
       &::after {
         position: absolute;
-        bottom: 30px;
-        right: 60px;
+        bottom: 16%;
+        right: 27%;
         content: attr(data-letter);
         color: transparent;
         -webkit-text-stroke: 1px $color-brand;
         z-index: -1;
       }
+    }
+
+    @include below($hd) {
+      font-size: 60px;
+    }
+    @include below($desktop) {
+      font-size: 40px;
+    }
+    @include below($laptop) {
+      font-size: 32px;
+    }
+    @include below($phone) {
+      font-size: 21px;
     }
   }
 
