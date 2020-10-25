@@ -66,10 +66,10 @@
   }
 
   // load background
-  /*let bgPage = document.querySelector('[data-background]');
+  let bgPage = document.querySelector('[data-background]');
   if( bgPage ) {
     let bgPageSrc = bgPage.querySelector('img').src;
     bgPage.style.backgroundImage = "url('" + bgPageSrc + "')";
-  }*/
+  }
 
 })();

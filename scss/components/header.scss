@@ -13,6 +13,7 @@
 
   &.isSticky {
     position: sticky;
+    min-width: 320px;
     padding-top: 6px;
     padding-bottom: 6px;
     background-color: rgba($color-grey, .7);
@@ -63,6 +64,9 @@
     }
     .isSticky & span {
       font-size: 18px;
+      @include below($phone) {
+        font-size: 14px;
+      }
     }
   }
   &-media {
@@ -76,11 +80,17 @@
 
     .isSticky &-wrap {
       width: 45px;
+      @include below($phone) {
+        width: 30px;
+      }
     }
 
     &-wrap {
       width: 250px;
       margin: 0 auto;
+      @include below($hd) {
+        width: 180px;
+      }
       @include below($desktop) {
         width: 120px;
       }
@@ -133,6 +143,9 @@
 
     .isSticky & span {
       font-size: 18px;
+      @include below($phone) {
+        font-size: 14px;
+      }
     }
   }
 }
