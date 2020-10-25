@@ -1,0 +1,46 @@
+.hidden,
+[hidden] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.hidden-visibility{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.breakline{
+    display: block;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: underline;
+    &:disabled,
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}
+
+.align-middle {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.img-fluid {
+    width: auto;
+    max-width: 100%;
+}

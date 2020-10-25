@@ -1,0 +1,24 @@
+@mixin margin-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin box-center {
+   @include absolute($top: 50%);
+}
+
+@mixin box-horizontal-center {
+    transform: translate(0, -50%); 
+    @include absolute($top: 50%);
+}
+
+@mixin box-vertical-center {
+    transform: translate(-50%, 0); 
+    @include absolute($left: 50%);
+ }
+
+@mixin center($size: 100%) {
+    max-width: $size;
+    width: 100%;
+    @include margin-center();
+}

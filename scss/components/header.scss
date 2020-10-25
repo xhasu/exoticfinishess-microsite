@@ -1,0 +1,100 @@
+
+
+.header {
+  position: relative;
+  top: 0;
+  padding-top: 20px;
+  z-index: 10;
+  box-sizing: border-box;
+
+  &.isSticky {
+    position: sticky;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-color: rgba($color-grey, .7);
+    backdrop-filter: blur(5px);
+  }
+
+  &-wrapper {
+    @include max-layout();
+  }
+
+  &-box {
+    display: flex;
+    align-items: center;
+  }
+  &-brand {
+    flex: 1;
+    line-height: 1;
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 24px;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 24px;
+      color: white;
+    }
+    .isSticky & span {
+      font-size: 18px;
+    }
+  }
+  &-media {
+    position: relative;
+    flex: 0 0 0%;
+
+    .isSticky & {
+      order: -1;
+      margin-right: 12px;
+    }
+
+    .isSticky &-wrap {
+      width: 45px;
+    }
+
+    &-wrap {
+      width: 250px;
+      margin: 0 auto;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 0;
+    }
+  }
+  &-nav {
+    display: flex;
+    flex: 1;
+    justify-content: end;
+    justify-content: flex-end;
+    color: white;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      @include above($tablet){
+        &:first-child span {
+          padding-left: 10px;
+        }
+      }
+    }
+    span {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      padding-right: 10px;
+      padding-left: 10px;
+      @include above($tablet){
+        padding-left: 120px;
+      }
+    }
+
+    .isSticky & span {
+      font-size: 18px;
+    }
+  }
+}

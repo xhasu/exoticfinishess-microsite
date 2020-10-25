@@ -1,0 +1,32 @@
+@mixin relative($top: null, $right: null, $bottom: null, $left: null) {
+    position: relative;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin fixed($top: null, $right: null, $bottom: null, $left: null) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin cover($position: 'absolute') {
+    @if $position == 'absolute' {
+        @include absolute(0, 0, 0, 0);
+    }
+    @else {
+        @include fixed(0, 0, 0, 0);
+    }
+}

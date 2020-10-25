@@ -1,0 +1,34 @@
+@mixin font-face($name, $file, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: '#{$name}';
+        src: url('../fonts/#{$file}.woff2') format('woff2'),
+             url('../fonts/#{$file}.woff2') format('woff2');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+@include font-face('CenturyGothic', 'CenturyGothic/CenturyGothic-Regular', 400);
+@include font-face('CenturyGothic', 'CenturyGothic/CenturyGothic-Bold', 700);
+
+@include font-face('Butler', 'Butler/Butler-Black', 900);
+@include font-face('MyriadPro', 'MyriadPro/MyriadPro-Regular', 400);
+
+@mixin font-default {
+    font-family: 'CenturyGothic';
+    font-weight: 400;
+}
+
+@mixin font-bold {
+    font-family: 'CenturyGothic';
+    font-weight: 700;
+}
+
+@mixin font-butler {
+    font-family: 'Butler';
+}
+
+@mixin font-myriad {
+    font-family: 'MyriadPro';
+}

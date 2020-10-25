@@ -1,0 +1,147 @@
+
+
+.contact {
+  position: relative;
+  margin-bottom: 60px;
+  @include below($laptop) {
+    margin-bottom: 30px;
+  }
+
+  &-brand {
+    position: relative;
+    text-align: center;
+    margin-bottom: 42px;
+    img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      margin: 0 auto;
+      @include below($laptop) {
+        width: 120px;
+        height: auto;
+      }
+    }
+  }
+
+  &-wrapper {
+    @include center(1040px);
+    padding: 0 20px;
+    box-sizing: border-box;
+    @include below($laptop) {
+      max-width: 620px;
+    }
+    @include below($phone) {
+      padding: 0;
+    }
+  }
+  &-box {
+    background-color: white;
+    padding: 60px 30px;
+
+    display: flex;
+
+    box-sizing: border-box;
+    @include below($laptop) {
+      padding: 30px 15px;
+      flex-direction: column;
+    }
+    @include below($laptop) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &-info {
+    flex: 1;
+    background-color: $color-brand;
+    margin: 0 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include below($laptop) {
+      margin-right: 15px;
+      margin-left: 15px;
+      margin-bottom: 20px;
+      padding: 40px 10px;
+    }
+  }
+
+  .info-group {
+    display: block;
+    padding: 0 24px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    @include below($laptop) {
+      padding: 0 12px;
+      margin-bottom: 16px;
+    }
+    @include below($phone) {
+      padding: 0;
+    }
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 40px;
+      img {
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        max-width: 100%;
+        margin-bottom: 0;
+      }
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 5px;
+      font-size: 18px;
+      @include font-default();
+      @include below($laptop) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-form {
+    flex: 1;
+    margin: 0 30px;
+    box-sizing: border-box;
+    @include below($laptop) {
+      margin: 0 15px;
+    }
+  }
+  &-title {
+    position: relative;
+    text-align: left;
+    @include font-bold();
+    font-size: 32px;
+    color: $color-brand;
+    margin-bottom: 32px;
+    @include below($laptop) {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.share {
+  position: relative;
+  display: flex;
+  padding: 0 24px;
+  box-sizing: border-box;
+  &-item {
+    margin-right: 12px;
+    cursor: pointer;
+    img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+  }
+  @include below($laptop) {
+    padding: 0 12px;
+  }
+}
