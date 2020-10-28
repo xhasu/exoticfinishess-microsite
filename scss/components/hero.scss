@@ -1,0 +1,82 @@
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  height: calc(100vh - 47px);
+  min-height: 640px;
+  padding: 0 15px;
+  background-color: $color-yellow;
+  box-sizing: border-box;
+
+  @include below($tablet) {
+    min-height: 420px;
+    max-height: 640px;
+  }
+
+  &-box {
+    display: block;
+    width: 100%;
+    max-width: 860px;
+    padding-left: 46px;
+    border-left: 2px solid black;
+    text-transform: uppercase;
+    color: black;
+    box-sizing: border-box;
+    @include below($tablet) {
+      max-width: 420px;
+    }
+    @include below($phone) {
+      padding-left: 30px;
+      max-width: 420px;
+    }
+  }
+  
+  &-subtitle {
+    font-size: 25px;
+    line-height: 1;
+  }
+  &-title {
+    @include font-butler();
+    font-size: 88px;
+    line-height: 1;
+    @include below($tablet) {
+      font-size: 42px;
+    }
+  }
+  
+  &-scroll {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    cursor: pointer;
+    span {
+      display: block;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+      @include below($tablet) {
+        font-size: 16px;
+      }
+    }
+    .icon {
+      display: block;
+      text-align: center;
+      img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

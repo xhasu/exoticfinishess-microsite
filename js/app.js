@@ -47,7 +47,7 @@
     let scrolled = window.pageYOffset || document.documentElement.scrollTop;
     let diffTop = stickyObserver.getBoundingClientRect().y + scrolled;
 
-    if (scrolled >= diffTop - 25) {
+    if (scrolled >= diffTop - 57) {
       headerElement.classList.add('isSticky');
     } else {
       headerElement.classList.remove('isSticky');
@@ -62,6 +62,7 @@
   }
 
   if( stickyObserver ){
+    _throttleSticky();
     window.addEventListener("scroll", _throttleSticky);
   }
 

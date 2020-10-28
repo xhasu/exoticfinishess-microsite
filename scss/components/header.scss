@@ -1,9 +1,14 @@
 
 
 .header {
-  position: relative;
+  // position: absolute;
+  position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
   padding-top: 20px;
+  background-color: $color-yellow;
+  color: black;
   z-index: 10;
   box-sizing: border-box;
 
@@ -16,6 +21,7 @@
     min-width: 320px;
     padding-top: 6px;
     padding-bottom: 6px;
+    color: white;
     background-color: rgba($color-grey, .7);
     backdrop-filter: blur(5px);
   }
@@ -49,12 +55,20 @@
           height: auto;
         }
       }
+      .isSticky & {
+        display: none;
+      }
+    }
+    .icon-sticky{
+      display: none;
+      .isSticky & {
+        display: inline-block;
+      }
     }
     span {
       display: inline-block;
       vertical-align: middle;
       font-size: 24px;
-      color: white;
       @include below($laptop) {
         font-size: 18px;
       }
@@ -69,11 +83,13 @@
       }
     }
   }
-  &-media {
+  &-avatar {
     position: relative;
     flex: 0 0 0%;
+    display: none;
 
     .isSticky & {
+      display: block;
       order: -1;
       margin-right: 12px;
     }
@@ -86,14 +102,8 @@
     }
 
     &-wrap {
-      width: 250px;
+      width: 120px;
       margin: 0 auto;
-      @include below($hd) {
-        width: 180px;
-      }
-      @include below($desktop) {
-        width: 120px;
-      }
       @include below($laptop) {
         width: 60px;
       }
@@ -112,7 +122,6 @@
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    color: white;
     a {
       display: inline-block;
       text-decoration: none;
