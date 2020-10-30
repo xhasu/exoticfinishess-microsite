@@ -1,5 +1,15 @@
 (function(){
 
+  // parallax - rellax
+  let rellaxHeroBox = new Rellax('.hero-box', {
+    speed: 4,
+    center: true,
+  })
+  let rellaxBgLines = new Rellax('.bg-lines .bg-media', {
+    speed: 4,
+    center: true,
+  })
+
   // fancybox
   $.fancybox.defaults.backFocus = false;
 
@@ -66,11 +76,39 @@
     window.addEventListener("scroll", _throttleSticky);
   }
 
+  // typewriter
+  function heroType () {
+    let i = 0;
+    let el = document.querySelector('.hero .hero-title');
+    let txt = el.getAttribute('title');
+    let dist = el.querySelector('span');
+    let speed = 120;
+    const timer = () => {
+      let size = txt.length;
+      if( i < size ){
+        dist.innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(timer, speed);
+      }
+      if (i == (size - 1)) {
+        el.querySelector('i').remove();
+      }
+    }
+    timer();
+  }
+
+  setTimeout(() => {
+    heroType();
+  }, 1400);
+
+  // AOS animation
+  AOS.init();
+
   // load background
-  let bgPage = document.querySelector('[data-background]');
+  /*let bgPage = document.querySelector('[data-background]');
   if( bgPage ) {
     let bgPageSrc = bgPage.querySelector('img').src;
     bgPage.style.backgroundImage = "url('" + bgPageSrc + "')";
-  }
+  }*/
 
 })();

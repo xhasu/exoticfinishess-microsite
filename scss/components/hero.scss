@@ -79,4 +79,24 @@
       }
     }
   }
+
+  .cursor-line {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: 10px;
+    width: 2px;
+    height: 60px;
+    background-color: black;
+    animation: blink-caret 300ms infinite alternate ;
+  }
+
+}
+
+@keyframes blink-caret {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: black;
+  }
 }
