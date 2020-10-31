@@ -226,6 +226,11 @@
         max-width: 480px;
       }
     }
+    &.wrap-420 {
+      @include above($laptop + 32 ){
+        max-width: 420px;
+      }
+    }
     &.wrap-380 {
       @include above($laptop + 32 ){
         max-width: 380px;
