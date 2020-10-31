@@ -27,6 +27,10 @@
     new Swiper(el, {
       loop: true,
       threshold: 20,
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: paginationEl,
         type:  'bullets',

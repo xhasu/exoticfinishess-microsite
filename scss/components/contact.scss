@@ -117,7 +117,7 @@
     text-align: left;
     @include font-bold();
     font-size: 32px;
-    color: $color-brand;
+    color: black;
     margin-bottom: 32px;
     @include below($laptop) {
       font-size: 26px;

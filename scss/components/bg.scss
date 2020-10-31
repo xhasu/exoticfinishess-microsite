@@ -35,6 +35,7 @@
 }
 
 .bg-left{
+  display: none;
   z-index: 0;
   &.bg-left-01 {
     position: relative;
@@ -55,6 +56,7 @@
 }
 
 .bg-right {
+  display: none;
   z-index: 0;
   &.bg-right-01 {
     position: relative;

@@ -35,7 +35,7 @@
     transform: translate(12px, -8px);
     z-index: -1;
 
-    @include below($tablet){
+    @include below($laptop){
       transform: translate(6px, -4px);
     }
   }
@@ -48,7 +48,7 @@
     outline: none;
   }
 
-  @include below($tablet){
+  @include below($laptop){
     font-size: 18px;
     min-width: 120px;
     font-weight: 700;
