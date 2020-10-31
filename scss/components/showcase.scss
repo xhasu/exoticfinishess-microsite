@@ -146,8 +146,19 @@
     bottom: 0;
     right: 0;
     // transform: translate(100%, 15%);
+    // transform-origin: center center;
     transform: translate(110%, 15%);
     box-sizing: border-box;
+    @include below($hd) {
+      img {
+        max-width: 80px;
+      }
+    }
+    @include below($laptop + 32) {
+      img {
+        max-width: 60px;
+      }
+    }
   }
 
   &-caption {
