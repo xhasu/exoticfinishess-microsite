@@ -65,7 +65,7 @@
     @include below($desktop) {
       font-size: 40px;
     }
-    @include below($laptop) {
+    @include below($laptop + 32) {
       font-size: 32px;
       margin-bottom: 12px;
     }
@@ -81,7 +81,7 @@
     text-transform: uppercase;
     margin-bottom: 12px;
     @include font-bold();
-    @include below($laptop) {
+    @include below($laptop + 32) {
       font-size: 20px;
     }  
     @include below($phone) {
@@ -98,7 +98,7 @@
       line-height: 1.2;
       margin-top: 0;
     }
-    @include below($laptop) {
+    @include below($laptop + 32) {
       p {
         font-size: 18px;
       }
@@ -121,6 +121,15 @@
       color: white;
       @include font-default();
       font-size: 24px;
+
+      @include below($laptop + 32) {
+        font-size: 18px;
+      }
+      @include below($phone) {
+        font-size: 16px;
+      }
+    
+
       &::before{
         display: inline-block;
         content: "\2022";
@@ -136,7 +145,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    transform: translate(100%, 15%);
+    // transform: translate(100%, 15%);
+    transform: translate(110%, 15%);
     box-sizing: border-box;
   }
 
@@ -206,9 +216,24 @@
   }
 
   &-wrap {
+    &.wrap-540 {
+      @include above($laptop + 32 ){
+        max-width: 540px;
+      }
+    }
+    &.wrap-480 {
+      @include above($laptop + 32 ){
+        max-width: 480px;
+      }
+    }
     &.wrap-380 {
-      @include above($laptop ){
+      @include above($laptop + 32 ){
         max-width: 380px;
+      }
+    }
+    &.wrap-320 {
+      @include above($laptop + 32 ){
+        max-width: 320px;
       }
     }
   }
