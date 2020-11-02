@@ -5,15 +5,23 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  height: calc(100vh - 47px);
+  // height: calc(100vh - 47px);
   min-height: 640px;
   padding: 0 15px;
   background-color: $color-yellow;
   box-sizing: border-box;
+  
+  position: sticky;
+  top: 0;
 
   @include below($tablet) {
     min-height: 420px;
     max-height: 640px;
+  }
+
+  &-wrapper {
+    position: relative;
+    height: 300vh;
   }
 
   &-box {

@@ -35,14 +35,13 @@
 }
 
 .bg-left{
-  display: none;
   z-index: 0;
   &.bg-left-01 {
     position: relative;
     height: 0;
     .bg-media {
       left: 0;
-      top: -80px;
+      top: 180px;
     }
   }
   &.bg-left-02 {
@@ -56,7 +55,6 @@
 }
 
 .bg-right {
-  display: none;
   z-index: 0;
   &.bg-right-01 {
     position: relative;
@@ -94,6 +92,23 @@
     right: 0;
     img {
       width: 100%;
+    }
+  }
+}
+
+.bg-circle {
+  position: relative;
+  z-index: 0;
+  &.bg-right {
+    .bg-media {
+      top: 180px;
+      right: -125px;
+    }
+  }
+  &.bg-left {
+    .bg-media {
+      top: 180px;
+      left: -125px;
     }
   }
 }

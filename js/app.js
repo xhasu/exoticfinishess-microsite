@@ -1,12 +1,18 @@
 (function(){
 
   // parallax - rellax
-  let rellaxHeroBox = new Rellax('.hero-box', {
+  let rellaxBgLines = new Rellax('.bg-lines .bg-media', {
     speed: 4,
     center: true,
   })
-  let rellaxBgLines = new Rellax('.bg-lines .bg-media', {
-    speed: 4,
+
+  let rellaxBgCircleRight = new Rellax('.bg-circle.bg-right .bg-media', {
+    speed: 6,
+    center: true,
+  })
+
+  let rellaxBgCircleLeft = new Rellax('.bg-circle.bg-left .bg-media', {
+    speed: 6,
     center: true,
   })
 

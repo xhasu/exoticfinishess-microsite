@@ -1,7 +1,13 @@
-
 .features {
   position: relative;
   margin-bottom: 120px;
+
+  @include below($laptop) {
+    margin-bottom: 60px;
+  }
+  @include below($phone) {
+    margin-bottom: 40px;
+  }
 
   &-wrapper {
     position: relative;
@@ -22,6 +28,13 @@
     margin-bottom: 24px;
 
     border-bottom-right-radius: 24px;
+
+    @include below($laptop) {
+      max-width: 480px;
+    }
+    @include below($phone) {
+      margin-bottom: 12px;
+    }
   }
 
   &-actions {
@@ -43,6 +56,14 @@
     font-size: 34px;
     color: white;
     margin-bottom: 24px;
+    @include below($laptop) {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    @include below($phone) {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
   }
 
   &-caption {
@@ -54,6 +75,13 @@
     line-height: 1;
     color: white;
     z-index: 0;
+    @include below($tablet) {
+      font-size: 18px;
+      padding-left: 0;
+    }
+    @include below($phone) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -73,6 +101,13 @@
     transition: all ease-in 400ms;
     box-sizing: border-box;
 
+    @include below($laptop) {
+      height: 160px;
+    }
+    @include below($phone) {
+      height: 120px;
+    }
+
     &:first-child {
       border-top-left-radius: 24px;
     }
@@ -90,6 +125,14 @@
     display: flex;
     place-items: center;
     margin-bottom: 12px;
+    width: 100%;
+    margin: 0 auto;
+    @include below($laptop) {
+      width: 60px;
+    }
+    @include below($phone) {
+      width: 40px;
+    }
     img {
       display: block;
       width: auto;
@@ -118,5 +161,13 @@
     text-transform: uppercase;
     padding: 0 15px;
     box-sizing: border-box;
+    @include below($laptop) {
+      font-size: 14px;
+      line-height: 1;
+      padding: 0 5px;
+    }
+    @include below($phone) {
+      font-size: 12px;
+    }
   }
 }

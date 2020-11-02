@@ -1,8 +1,8 @@
 
 
 .header {
-  // position: absolute;
-  position: sticky;
+  // position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -15,9 +15,10 @@
   @include below($laptop) {
     padding-top: 10px;
   }
-
+  
   &.isSticky {
-    position: sticky;
+    // position: sticky;
+    position: fixed;
     min-width: 320px;
     padding-top: 6px;
     padding-bottom: 6px;
