@@ -26,16 +26,24 @@
 
 .bg-media {
   position: absolute;
+  overflow: hidden;
   img {
     display: block;
     width: auto;
     height: auto;
     margin-bottom: 0;
   }
+
+  @include below(1600px){
+    width: 45px;
+  }
 }
 
 .bg-left{
   z-index: 0;
+  @include below($desktop){
+    display: none;
+  }
   &.bg-left-01 {
     position: relative;
     height: 0;
@@ -56,6 +64,9 @@
 
 .bg-right {
   z-index: 0;
+  @include below($desktop){
+    display: none;
+  }
   &.bg-right-01 {
     position: relative;
     height: 0;
@@ -99,16 +110,29 @@
 .bg-circle {
   position: relative;
   z-index: 0;
+  .bg-media {
+    width: 125px;
+    overflow: hidden;
+    @include below($tablet){
+      display: none;
+    }
+  }
   &.bg-right {
+    display: block;
     .bg-media {
       top: 180px;
-      right: -125px;
+      right: 0;
     }
   }
   &.bg-left {
+    display: block;
+    img {
+      position: relative;
+      left: -125px;
+    }
     .bg-media {
       top: 180px;
-      left: -125px;
+      left: 0;
     }
   }
 }
