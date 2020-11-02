@@ -1,5 +1,16 @@
 (function(){
 
+  const swapTextures = () => {
+    let main = document.querySelector('.showcase-textures .texture-main');
+    let listTexture = document.querySelectorAll('.showcase-textures .texture-item');
+    
+    listTexture.item(0).append(main.querySelector('a'));
+    $(main).append(listTexture.item(0).querySelector('a'));
+    listTexture.item(0).parentNode.append(listTexture.item(0));  
+  };
+
+  let timerSwapTextures = setInterval(swapTextures, 4000);
+
   // parallax - rellax
   let rellaxBgLines = new Rellax('.bg-lines .bg-media', {
     speed: 4,
