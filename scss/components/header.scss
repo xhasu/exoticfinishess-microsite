@@ -128,26 +128,19 @@
       text-decoration: none;
       color: inherit;
       cursor: pointer;
-      @include above($tablet){
-        &:first-child span {
-          padding-left: 10px;
-        }
-      }
     }
     span {
       display: block;
       font-size: 24px;
       line-height: 1;
-      padding-right: 10px;
-      padding-left: 10px;
+      padding: 0 20px;
+      box-sizing: border-box;
       @include below($laptop) {
         font-size: 18px;
       }
       @include below($phone) {
+        padding: 0 10px;
         font-size: 14px;
-      }
-      @include above($tablet){
-        padding-left: 120px;
       }
     }
 

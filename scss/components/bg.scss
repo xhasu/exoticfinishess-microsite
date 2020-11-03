@@ -33,10 +33,6 @@
     height: auto;
     margin-bottom: 0;
   }
-
-  @include below(1600px){
-    width: 45px;
-  }
 }
 
 .bg-left{
@@ -58,6 +54,11 @@
     .bg-media {
       left: 0;
       top: -80px;
+    }
+  }
+  .bg-media {
+    @include below(1600px){
+      width: 45px;
     }
   }
 }
@@ -91,6 +92,11 @@
       right: 0;
     }
   }
+  .bg-media {
+    @include below(1600px){
+      width: 45px;
+    }
+  }
 }
 
 .bg-lines {
@@ -104,6 +110,12 @@
     img {
       width: 100%;
     }
+    @include below($phone){
+      img {
+        width: 200%;
+        opacity: .4;
+      }
+    }
   }
 }
 
@@ -114,7 +126,7 @@
     width: 125px;
     overflow: hidden;
     @include below($tablet){
-      display: none;
+      opacity: .4;
     }
   }
   &.bg-right {

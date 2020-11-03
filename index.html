@@ -81,7 +81,7 @@
 					</div>
 					<div class="header-nav">
 						<nav>
-							<a href="#"><span>Home</span></a>
+							<a href="#" data-to-view="#hero"><span>Home</span></a>
 							<a href="#"><span>About</span></a>
 						</nav>
 					</div>
@@ -90,7 +90,7 @@
 		</div>
 		
 		<!-- hero -->
-		<div class="hero-wrapper">
+		<div class="hero-wrapper" id="hero">
 			<div class="hero">
 				<div class="hero-box" >
 					<div class="hero-subtitle">Hello There!</div>
@@ -375,7 +375,7 @@
 		<div class="panel container" id="fa3">
 			<div class="row panel-box showcase">
 				<div class="panel-item col-5 hidden visible-lg"></div>
-				<div class="panel-item col-6">
+				<div class="panel-item col-7 col-lg-6">
 					<div class="showcase-info">
 						<div class="showcase-title text-lg-right" data-aos="fade-up" data-aos-offset="400"><span data-letter="C">C</span>ommercial</div>
 						<div class="showcase-subtitle text-right">Large format printing</div>
@@ -726,6 +726,9 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+	<!-- polyfill -->
+	<script src="js/smoothscroll.min.js"></script>
 
 	<!-- application js -->
 	<script src="js/image-comparison-slider.min.js"></script>
