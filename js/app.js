@@ -12,17 +12,17 @@
   let timerSwapTextures = setInterval(swapTextures, 4000);
 
   // parallax - rellax
-  let rellaxBgLines = new Rellax('.bg-lines .bg-media', {
+  new Rellax('.bg-lines .bg-media', {
     speed: 4,
     center: true,
   })
 
-  let rellaxBgCircleRight = new Rellax('.bg-circle.bg-right .bg-media', {
+  new Rellax('.bg-circle.bg-right .bg-media', {
     speed: 6,
     center: true,
   })
 
-  let rellaxBgCircleLeft = new Rellax('.bg-circle.bg-left .bg-media', {
+  new Rellax('.bg-circle.bg-left .bg-media', {
     speed: 6,
     center: true,
   })
@@ -69,7 +69,7 @@
   }
 
   // header sticky
-  let throttleTimeout = null;
+  let throttleTimeoutHeader = null;
   let stickyObserver = document.querySelector('.sticky-observer');
   let headerElement = document.querySelector('.header');
 
@@ -84,17 +84,52 @@
       headerElement.classList.remove('isSticky');
     }
 
-    throttleTimeout = null;
+    throttleTimeoutHeader = null;
   };
 
   function _throttleSticky(){
-    if (throttleTimeout == null)
-      throttleTimeout = setTimeout(handleSticky, 120);
+    if (throttleTimeoutHeader == null)
+      throttleTimeoutHeader = setTimeout(handleSticky, 120);
   }
 
   if( stickyObserver ){
     _throttleSticky();
     window.addEventListener("scroll", _throttleSticky);
+  }
+
+  // hero stage
+  let throttleTimeoutHero = null;
+  let stageObserverFirst = document.querySelector('.hero-observer.first');
+  let stageObserverSecond = document.querySelector('.hero-observer.second');
+  let heroWrapperElement = document.querySelector('.hero-wrapper');
+
+  function handleHeroStage () {
+
+    let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    let diffStageFirstTop = stageObserverFirst.getBoundingClientRect().y + scrolled;
+    let diffStageScondTop = stageObserverSecond.getBoundingClientRect().y + scrolled;
+
+    if (scrolled >= diffStageFirstTop && scrolled <= diffStageScondTop) {
+      heroWrapperElement.classList.add('stage-1');
+    } else if (scrolled >= diffStageScondTop) {
+      heroWrapperElement.classList.remove('stage-1');
+      heroWrapperElement.classList.add('stage-2');
+    } else {
+      heroWrapperElement.classList.remove('stage-1');
+      heroWrapperElement.classList.remove('stage-2');
+    }
+
+    throttleTimeoutHero = null;
+  };
+
+  function _throttleHeroStage(){
+    if (throttleTimeoutHero == null)
+      throttleTimeoutHero = setTimeout(handleHeroStage, 120);
+  }
+
+  if( stageObserverFirst && stageObserverSecond){
+    _throttleHeroStage();
+    window.addEventListener("scroll", _throttleHeroStage);
   }
 
   // typewriter
