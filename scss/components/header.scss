@@ -15,6 +15,7 @@
 
   @include below($laptop) {
     padding-top: 10px;
+    padding-bottom: 10px;
   }
   
   &.isSticky {

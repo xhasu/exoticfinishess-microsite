@@ -101,17 +101,21 @@
   let throttleTimeoutHero = null;
   let stageObserverFirst = document.querySelector('.hero-observer.first');
   let stageObserverSecond = document.querySelector('.hero-observer.second');
+  let stageObserverEnd = document.querySelector('.hero-observer.end');
   let heroWrapperElement = document.querySelector('.hero-wrapper');
+
+  let heroStageRecord = 0;
 
   function handleHeroStage () {
 
     let scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    let diffStageFirstTop = stageObserverFirst.getBoundingClientRect().y + scrolled;
-    let diffStageScondTop = stageObserverSecond.getBoundingClientRect().y + scrolled;
-
-    if (scrolled >= diffStageFirstTop && scrolled <= diffStageScondTop) {
+    let diffStageFirst = stageObserverFirst.getBoundingClientRect().y + scrolled;
+    let diffStageSecond = stageObserverSecond.getBoundingClientRect().y + scrolled;
+    let diffStageEnd = stageObserverEnd.getBoundingClientRect().y + scrolled;
+    
+    if (scrolled >= diffStageFirst && scrolled <= diffStageSecond) {
       heroWrapperElement.classList.add('stage-1');
-    } else if (scrolled >= diffStageScondTop) {
+    } else if (scrolled >= diffStageSecond) {
       heroWrapperElement.classList.remove('stage-1');
       heroWrapperElement.classList.add('stage-2');
     } else {
@@ -119,12 +123,18 @@
       heroWrapperElement.classList.remove('stage-2');
     }
 
+    if( (scrolled < heroStageRecord) &&  (scrolled <= diffStageEnd)) {
+      heroWrapperElement.classList.remove('stage-1');
+      heroWrapperElement.classList.remove('stage-2');
+    }
+    
     throttleTimeoutHero = null;
+    heroStageRecord = scrolled;
   };
 
   function _throttleHeroStage(){
     if (throttleTimeoutHero == null)
-      throttleTimeoutHero = setTimeout(handleHeroStage, 120);
+      throttleTimeoutHero = setTimeout(handleHeroStage, 250);
   }
 
   if( stageObserverFirst && stageObserverSecond){
