@@ -6,6 +6,9 @@
   @include below($laptop) {
     margin-bottom: 30px;
   }
+  @include below($phone) {
+    margin-bottom: 0;
+  }
 
   &-brand {
     position: relative;

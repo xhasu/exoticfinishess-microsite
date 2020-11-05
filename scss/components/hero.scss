@@ -305,7 +305,10 @@
     width: 2px;
     height: 60px;
     background-color: black;
-    animation: blink-caret 300ms infinite alternate ;
+    animation: blink-caret 300ms infinite alternate;
+    @include below($tablet) {
+      height: 28px;
+    }
   }
 
 }
