@@ -62,27 +62,27 @@
 </head>
 <body>
 		
-	<!-- app -->
+	<!-- app [page-about] -->
 	<div class="app">
 
 		<!-- header -->
 		<div class="header">
 			<div class="header-wrapper">
 				<div class="header-box">
-					<div class="header-brand">
+					<div class="header-brand" data-to-view="#hero">
 						<i class="icon"><img src="img/icons/icon-waves-black.png" alt="waves" width="43" height="25"></i>
 						<i class="icon icon-sticky"><img src="img/icons/icon-waves.png" alt="waves" width="43" height="25"></i>
 						<span>Exotic Finishess</span>
 					</div>
-					<div class="header-avatar">
+					<div class="header-avatar" data-to-view="#hero">
 						<div class="header-avatar-wrap">
 							<img src="img/brand.png" alt="Exotic Finishess Brand Image" width="250" height="250">
 						</div>
 					</div>
 					<div class="header-nav">
 						<nav>
-							<a href="#" data-to-view="#hero"><span>Home</span></a>
-							<a href="#"><span>About</span></a>
+							<div class="nav-item" data-to-view="#hero"><span>Home</span></div>
+							<div class="nav-item open-about"><span>About</span></div>
 						</nav>
 					</div>
 				</div>
@@ -131,6 +131,29 @@
 			<div class="sticky-observer"></div>
 		</div>
 
+		<!-- about -->
+		<div class="about">
+			<div class="about-box">
+				<div class="about-item">
+					<div class="about-title">Exotic<br>Finishess</div>
+				</div>
+				<div class="about-item">
+					<div class="about-divider"></div>
+					<div class="about-description">
+						<p>
+							We are a group of humans dedicated to create, produce, and improve design projects. Our goal is to bring life the ideas from Residential to Commercial works.
+						</p>
+						<p>
+							The way we work allows us to get into a project from the start, creating a concept, designing it and producing it to finally install and bring the best experiences for you and/or your costumers.
+						</p>
+						<p>
+							Our team is fully capacitated to execute and give you a guide through all the process.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- bg-left -->
 		<div class="bg-left bg-left-01">
 			<div class="bg-media">
@@ -141,7 +164,7 @@
 		<!-- panel commercial -->
 		<div class="panel container">
 			<div class="row panel-box showcase">
-				<div class="panel-item col-12 col-md-6 order-2-lg">
+				<div class="panel-item col-12 col-md-6 order-2 order-lg-0">
 					<div class="showcase-media">
 						<a href="img/commercial-main.jpg" data-fancybox="gallery_capture"><img src="img/commercial-main.jpg" loading="lazy" alt="" class="zoom img-responsive"></a>
 					</div>
@@ -154,7 +177,7 @@
 								<p>Capture the attention of passersby with eye-catching designs. Installed and produced by our team</p>
 							</div>
 							<div class="showcase-actions text-right">
-								<button type="button" class="btn">More info</button>
+								<button type="button" class="btn" data-to-view="#visualmarketing">More info</button>
 							</div>
 						</div>
 					</div>
@@ -180,7 +203,7 @@
 								<p>Create a luxurious and modern space with a variety of finishes</p>
 							</div>
 							<div class="showcase-actions text-right">
-								<button type="button" class="btn">More info</button>
+								<button type="button" class="btn" data-to-view="#textures">More info</button>
 							</div>
 						</div>
 					</div>
@@ -194,7 +217,7 @@
 		</div>
 
 		<!-- panel visual marketing -->
-		<div class="panel container">
+		<div class="panel container" id="visualmarketing">
 			<div class="row panel-box showcase">
 				<div class="panel-item col-12 col-md-6">
 					<div class="showcase-info">
@@ -340,8 +363,8 @@
 		</div>
 
 		<!-- bg-lines -->
-		<div class="bg-lines">
-			<div class="bg-media">
+		<div class="bg-lines" >
+			<div class="bg-media" data-rellax-speed="4" data-rellax-desktop-speed="8">
 				<img src="img/backgrounds/bg-lines.png" alt="">
 			</div>
 		</div>
@@ -708,7 +731,7 @@
 							<a href="https://instagram.com/exoticfinishess" rel="noopener" target="_blank" class="share-item">
 								<img src="img/icons/icon-instagram.png" alt="icon instagram" width="39" height="39">
 							</a>
-							<a href="#" rel="noopener" target="_blank" class="share-item">
+							<a href="https://www.facebook.com/exoricfinishess/" rel="noopener" target="_blank" class="share-item">
 								<img src="img/icons/icon-facebook.png" alt="icon facebook" width="39" height="39">
 							</a>
 						</div>

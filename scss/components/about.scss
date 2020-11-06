@@ -1,0 +1,106 @@
+
+.about {
+  @include fixed(0,0,0,0);
+  height: 100vh;
+  height: 100%;
+  max-width: 70vw;
+  min-width: 320px;
+  margin-left: auto;
+  box-sizing: border-box;
+  z-index: 9;
+  display: none;
+
+  .page-about & {
+    display: block;
+  }
+
+  @include below($desktop) {
+    margin-left: 300px;
+    margin-right: 0;
+    max-width: 100%;
+  }
+  @include below($laptop) {
+    margin-left: 0;
+  }
+
+  &-box {
+    background-color: $color-brand;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    padding: 180px 60px 30px 60px;
+    box-sizing: border-box;
+    @include below($desktop) {
+      padding: 100px 30px 30px 30px;
+    }
+    @include below($laptop) {
+      display: block;
+    }
+    @include below($phone) {
+      padding: 80px 20px 20px;
+    }
+  }
+  &-item {
+    position: relative;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    max-height: 640px;
+    display: flex;
+    flex: 1;
+
+    &:first-child {
+      flex: 0 1 0%;
+    }
+    &:last-child {
+      flex: 1 1 auto;
+    }
+
+    @include below($desktop) {
+      max-height: 540px;
+      padding: 20px;
+    }
+    @include below($laptop) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      max-height: none;
+    }
+  }
+  &-title {
+    @include font-butler();
+    font-size: 88px;
+    line-height: 1;
+    text-transform: uppercase;
+    @include below(1600px) {
+      font-size: 42px;
+    }
+    @include below($desktop) {
+      font-size: 32px;
+    }
+  }
+  &-description {
+    align-self: flex-end;
+    max-width: 540px;
+    p {
+      font-size: 25px;
+      margin-top: 0;
+      line-height: 1.2;
+      @include below($desktop) {
+        font-size: 21px;
+      }
+      @include below($laptop) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 2px;
+    background-color: black;
+  }
+}

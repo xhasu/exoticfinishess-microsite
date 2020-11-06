@@ -1,5 +1,6 @@
 (function(){
 
+  // textures swap
   const swapTextures = () => {
     let main = document.querySelector('.showcase-textures .texture-main');
     let listTexture = document.querySelectorAll('.showcase-textures .texture-item');
@@ -11,9 +12,16 @@
 
   let timerSwapTextures = setInterval(swapTextures, 4000);
 
+  // open about page 
+  let openAboutEl = document.querySelector('.open-about');
+  openAboutEl.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('body').classList.toggle('overflow-hidden');
+    document.querySelector('.app').classList.toggle('page-about');
+  })
+
   // parallax - rellax
   new Rellax('.bg-lines .bg-media', {
-    speed: 4,
     center: true,
   })
 
@@ -63,7 +71,7 @@
 
   for( let i  = 0; i < toViewSize; i++){
     toView.item(i).addEventListener('click', function(e) {
-      e.preventDefault()
+      e.preventDefault();
       document.querySelector(this.getAttribute('data-to-view')).scrollIntoView({behavior: 'smooth'});
     })
   }

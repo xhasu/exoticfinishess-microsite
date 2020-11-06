@@ -29,6 +29,14 @@
     backdrop-filter: blur(5px);
   }
 
+  .page-about &.isSticky {
+    background: transparent;
+    backdrop-filter: none;
+    .header-nav {
+      color: black;
+    }
+  }
+
   &-wrapper {
     @include max-layout();
     @include below($phone) {
@@ -42,6 +50,7 @@
     align-items: center;
   }
   &-brand {
+    cursor: pointer;
     flex: 1;
     line-height: 1;
     .icon {
@@ -90,6 +99,7 @@
     position: relative;
     flex: 0 0 0%;
     display: none;
+    cursor: pointer;
 
     .isSticky & {
       display: block;
@@ -125,7 +135,7 @@
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    a {
+    .nav-item {
       display: inline-block;
       text-decoration: none;
       color: inherit;
