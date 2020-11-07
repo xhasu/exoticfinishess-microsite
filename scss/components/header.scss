@@ -29,6 +29,21 @@
     backdrop-filter: blur(5px);
   }
 
+  .page-about & {
+    background-color: transparent;
+    @include above($laptop) {
+      .header-brand {
+        color: white;
+      }
+      .icon {
+        display: none;
+      }
+      .icon-sticky {
+        display: inline-block;
+      }
+    }
+  }
+
   .page-about &.isSticky {
     background: transparent;
     backdrop-filter: none;
