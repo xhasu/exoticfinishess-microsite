@@ -2,6 +2,16 @@
 # Apache Server Configs v2.14.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
 
+# RewriteEngine On
+# RewriteCond %{SERVER_PORT} 80
+# RewriteRule ^(.*)$ https://www.yourdomain.com/$1 [R,L]
+
+options -Indexes
+
+<Files .env>
+	Order allow,deny
+	Deny from all
+</Files>
 
 # setting the `Cache-Control
 
