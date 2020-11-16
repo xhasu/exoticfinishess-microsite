@@ -16,18 +16,14 @@
   $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
   $dotenv->load();
 
+  $from = $_ENV['EMAIL_FROM'];
+  $to = $_ENV['EMAIL_TO'];
+
   $name = $_POST["name"];
   $email = $_POST["email"];
   $subject = $_POST["subject"];
   $message = $_POST["message"];
 
-  $from = $_ENV['EMAIL_FROM'];
-
-  echo json_encode($_POST);
-
-  exit;
-
-  /*
   try {
     //Server settings
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -39,7 +35,8 @@
 
     //Recipients
     $mail->setFrom("$from", "Website Visitor");
-    $mail->addAddress("exoticfinishess@gmail.com", "$name");
+    // TODO: back to gmail
+    $mail->addAddress("$to", "$name");
     // $mail->addReplyTo("$email", "$name");
 
 
@@ -52,6 +49,6 @@
     echo json_encode(Array("success" => true));
   } catch (Exception $e) {
     echo json_encode(Array("error" => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"));
-  }*/
+  }
 
   exit;

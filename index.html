@@ -51,6 +51,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.css">
 
 	<!-- Styles -->
 	<style></style>
@@ -754,13 +755,13 @@
 						</div>
 					</div>
 					<div class="contact-form">
-						<form id="contactForm" name="contact" class="form form-contact">
+						<form id="contactForm" class="form form-contact" method="POST">
 							<div class="contact-title">Contact</div>
 							<div class="control">
-								<input type="text" name="name" id="name" placeholder="Name" required>
+								<input type="text" name="name" id="name" placeholder="Name" minlength="4" required>
 							</div>
 							<div class="control">
-								<input type="email" name="email" id="email" placeholder="E-mail" required>
+								<input type="email" name="email" id="email" placeholder="E-mail" minlength="6" required>
 							</div>
 							<div class="control">
 								<textarea name="subject" id="subject" rows="3" placeholder="Subject" required></textarea>
@@ -769,11 +770,18 @@
 								<textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
 							</div>
 							<div class="control text-right mt-5">
-								<button type="submit" class="btn">Send</button>
+								<button type="submit" class="btn btn-submit">Send</button>
 							</div>
 						</form>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="loading">
+			<div class="loading-box">
+				<span></span>
+				<span></span>
+				<span></span>
 			</div>
 		</div>
 
@@ -792,6 +800,8 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script>
 
 	<!-- polyfill -->
 	<script src="js/smoothscroll.min.js"></script>

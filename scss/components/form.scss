@@ -38,3 +38,51 @@
     }
   }
 }
+
+.loading {
+  @include fixed(0,0,0,0);
+  z-index: 500;
+  user-select: none;
+  background-color: black;
+  opacity: .8;
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    display: flex;
+  }
+
+  &-box {
+    display: inline-block;
+    vertical-align: middle;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background-color: white;
+      animation: pulseBullet 600ms ease-in-out infinite both;
+    }
+    span:nth-child(1){}
+    span:nth-child(2){
+      animation-delay: 100ms;
+    }
+    span:nth-child(3){
+      animation-delay: 200ms;
+    }
+  }
+}
+
+@keyframes pulseBullet {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
