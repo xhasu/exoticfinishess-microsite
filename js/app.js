@@ -185,4 +185,31 @@
     bgPage.style.backgroundImage = "url('" + bgPageSrc + "')";
   }
 
+  // form contact ajax
+  let btnSubmit = document.querySelector('#contactForm button[type="submit"]');
+  btnSubmit && btnSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let url = "/contact.php";
+    let _method = "POST";
+
+    let name = document.querySelector('#name').value;
+    let email = document.querySelector('#email').value;
+    let subject = document.querySelector('#subject').value;
+    let message = document.querySelector('#message').value;
+
+    let data = {
+      "name": name, 
+      "email": email, 
+      "subject": subject,
+      "message": message
+    };
+
+    axios.post(url, data)
+      .then(response => {
+        console.log(response);
+      })
+
+  });
+
 })();

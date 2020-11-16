@@ -23,6 +23,11 @@
 
   $from = $_ENV['EMAIL_FROM'];
 
+  echo json_encode($_POST);
+
+  exit;
+
+  /*
   try {
     //Server settings
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -47,6 +52,6 @@
     echo json_encode(Array("success" => true));
   } catch (Exception $e) {
     echo json_encode(Array("error" => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"));
-  }
+  }*/
 
   exit;
