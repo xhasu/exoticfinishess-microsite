@@ -44,9 +44,9 @@
     $mail->Body    = "$message";
 
     $mail->send();
-    echo json_decode(["success" => true]);
+    echo json_encode(["success" => true]);
   } catch (Exception $e) {
-    echo json_decode(["error" => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
+    echo json_encode(["error" => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
   }
 
   exit;
