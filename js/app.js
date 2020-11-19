@@ -15,10 +15,15 @@
 
   // open about page
   let openAboutEl = document.querySelector('.open-about');
-  openAboutEl.addEventListener('click', (e) => {
-    e.preventDefault();
+  let isOpenAbout = false;
+  const toggleAboutPage = () => {
+    isOpenAbout = !isOpenAbout;
     document.querySelector('body').classList.toggle('overflow-hidden');
     document.querySelector('.app').classList.toggle('page-about');
+  }
+  openAboutEl.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleAboutPage();
   });
 
   // parallax - rellax
@@ -72,6 +77,9 @@
   for (let i = 0; i < toViewSize; i++) {
     toView.item(i).addEventListener('click', function (e) {
       e.preventDefault();
+
+      if (isOpenAbout) toggleAboutPage();
+
       document
         .querySelector(this.getAttribute('data-to-view'))
         .scrollIntoView({ behavior: 'smooth' });

@@ -144,8 +144,10 @@
       img {
         display: block;
         width: auto;
-        max-width: 100%;
-        margin-bottom: 0;
+        max-width: 180px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 24px;
         @include below($tablet) {
           width: 120px;
         }
@@ -157,10 +159,28 @@
         text-transform: uppercase;
         color: white;
         text-align: center;
-        margin-bottom: 160px;
+        margin-bottom: 40px;
         @include below($tablet) {
           font-size: 18px;
-          margin-bottom: 60px;
+          margin-bottom: 20px;
+        }
+      }
+
+      &-description {
+        font-size: 14px;
+        line-height: 1.2;
+        color: white;
+        text-align: center;
+        max-width: 320px;
+        opacity: 0.2;
+        transition: opacity 600ms ease-in-out 600ms;
+        p {
+          margin-top: 0;
+        }
+
+        .stage-1 &,
+        .stage-2 & {
+          opacity: 1;
         }
       }
       
