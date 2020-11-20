@@ -167,15 +167,28 @@
       }
 
       &-description {
-        font-size: 14px;
-        line-height: 1.2;
+        
         color: white;
-        text-align: center;
-        max-width: 320px;
+        max-width: 480px;
         opacity: 0.2;
         transition: opacity 600ms ease-in-out 600ms;
         p {
+          font-size: 24px;
+          line-height: 1.2;
+          text-align: center;
           margin-top: 0;
+          @include below($tablet) {
+            font-size: 18px;
+          }
+          @include below($phone) {
+            font-size: 16px;
+          }
+        }
+        @include below($tablet) {
+          max-width: 420px;
+        }
+        @include below($phone) {
+          max-width: 320px;
         }
 
         .stage-1 &,
