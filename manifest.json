@@ -1,6 +1,6 @@
 {
-  "name": "Webapp",
-  "short_name": "app",
+  "name": "ExoticFinishess",
+  "short_name": "Exotic",
   "start_url":  "index.html",
   "icons": [
     {
@@ -11,6 +11,6 @@
   ],
   "display": "standalone",
   "theme_color": "#2196f3",
-  "background_color": "#cecece",
+  "background_color": "#fcd700",
   "orientation": "any"
 }
