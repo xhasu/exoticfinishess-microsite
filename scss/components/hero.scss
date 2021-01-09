@@ -263,6 +263,7 @@
     @include below($phone) {
       padding-left: 30px;
       max-width: 420px;
+      margin-bottom: 60px;
     }
 
     .stage-1 &,
@@ -279,6 +280,7 @@
       margin-bottom: 4px;
     }
   }
+
   &-title {
     @include font-butler();
     font-size: 88px;
@@ -328,6 +330,10 @@
     .stage-2 & {
       opacity: 0;
       transform: translateY(-100%);
+    }
+
+    @include below($phone) {
+      bottom: 80px;
     }
   }
 

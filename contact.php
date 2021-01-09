@@ -43,7 +43,7 @@
     // Content
     // $mail->isHTML(true);
     $mail->Subject = "Exotic Finishess $subject";
-    $mail->Body    = "$message";
+    $mail->Body    = "$mail - $message";
 
     $mail->send();
     echo json_encode(Array("success" => true));
