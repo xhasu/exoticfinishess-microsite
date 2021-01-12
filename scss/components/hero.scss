@@ -263,7 +263,7 @@
     @include below($phone) {
       padding-left: 30px;
       max-width: 420px;
-      margin-bottom: 80px;
+      margin-bottom: 60px;
     }
 
     .stage-1 &,
@@ -332,8 +332,8 @@
       transform: translateY(-100%);
     }
 
-    @include below($phone) {
-      bottom: 80px;
+    @include below($sm) {
+      bottom: 120px;
     }
   }
 
