@@ -89,6 +89,21 @@
     }  
   }
 
+  &-lead {
+    // @include font-bold();
+    font-size: 30px;
+    font-weight: 700;
+    color: $color-brand;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    @include below($laptop + 32) {
+      font-size: 24px;
+    }
+    @include below($phone) {
+      font-size: 18px;
+    }
+  }
+
   &-description {
     position: relative;
     color: white;
